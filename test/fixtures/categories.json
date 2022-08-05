@@ -1,0 +1,22 @@
+[
+    {
+      "model": "Category",
+      "data": {
+        "id": 1,
+        "Name": "Fixture item 1",
+        "IconBackImg": "This is fixture item 1.",
+        "NavBackImg": "This is fixture item 1.",
+        "Position": 1
+      }
+    },
+    {
+      "model": "Category",
+      "data": {
+        "id": 2,
+        "Name": "Fixture item 2",
+        "IconBackImg": "This is fixture item 2.",
+        "NavBackImg": "This is fixture item 2.",
+        "Position": 2
+      }
+    }
+  ]
