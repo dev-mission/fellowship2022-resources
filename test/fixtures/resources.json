@@ -1,0 +1,42 @@
+[
+  {
+    "model": "Resource",
+    "data": {
+      "id": 1,
+      "CategoryId": 1,
+      "CategoryTitle": "This is fixture item 1.",
+      "Title": "This is fixture item 1.",
+      "Organization": "This is fixture item 1.",
+      "NavPosition": 1,
+      "ShortDetails": "This is fixture item 1.",
+      "LongDetails": "This is fixture item 1.",
+      "Eligibility": "This is fixture item 1.",
+      "Hours": "This is fixture item 1.",
+      "Address": "This is fixture item 1.",
+      "Contact": "This is fixture item 1.",
+      "MainImg": "This is fixture item image 1.",
+      "SuppImg": "This is fixture item image 1.",
+      "Link": "This is fixture item url 1"
+    }
+  },
+  {
+    "model": "Resource",
+    "data": {
+      "id": 2,
+      "CategoryId": 2,
+      "CategoryTitle": "This is fixture item 2.",
+      "Title": "This is fixture item 2.",
+      "Organization": "This is fixture item 2.",
+      "NavPosition": 2,
+      "ShortDetails": "This is fixture item 2.",
+      "LongDetails": "This is fixture item 2.",
+      "Eligibility": "This is fixture item 2.",
+      "Hours": "This is fixture item 2.",
+      "Address": "This is fixture item 2.",
+      "Contact": "This is fixture item 2.",
+      "MainImg": "This is fixture item image 2.",
+      "SuppImg": "This is fixture item image 2.",
+      "Link": "This is fixture item url 2"
+    }
+  }
+]
