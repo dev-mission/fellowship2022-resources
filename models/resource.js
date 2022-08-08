@@ -9,11 +9,11 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Resource.belongsTo(models.Category);
     }
   }
   Resource.init(
     {
-      CategoryId: DataTypes.INTEGER,
       CategoryTitle: DataTypes.STRING,
       Title: DataTypes.TEXT,
       Organization: DataTypes.TEXT,

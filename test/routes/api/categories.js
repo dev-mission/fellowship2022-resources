@@ -11,7 +11,6 @@ describe('/api/categories', () => {
   let testSession;
 
   beforeEach(async () => {
-    await helper.loadFixtures(['categories']);
     await helper.loadFixtures(['categories', 'users']);
     testSession = session(app);
   });
@@ -57,7 +56,7 @@ describe('/api/categories', () => {
             Name: 'This is a new Category Name.',
             IconBackImg: 'This is a new Category IconBackImg.',
             NavBackImg: 'This is a new Category NavBackImg.',
-            Position: 1
+            Position: 1,
           })
           .expect(HttpStatus.CREATED);
 
@@ -89,7 +88,7 @@ describe('/api/categories', () => {
             Name: 'This is an updated Category Name.',
             IconBackImg: 'This is an updated Category IconBackImg.',
             NavBackImg: 'This is an updated Category NavBackImg.',
-            Position: 1
+            Position: 1,
           })
           .expect(HttpStatus.OK);
 
