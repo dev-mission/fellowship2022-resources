@@ -11,7 +11,6 @@ describe('/api/resources', () => {
   let testSession;
 
   beforeEach(async () => {
-    await helper.loadFixtures(['resources']);
     await helper.loadFixtures(['resources', 'users']);
     testSession = session(app);
   });
@@ -40,7 +39,7 @@ describe('/api/resources', () => {
       assert.deepStrictEqual(res.Contact, 'This is fixture item 1.');
       assert.deepStrictEqual(res.MainImg, 'This is fixture item image 1.');
       assert.deepStrictEqual(res.SuppImg, 'This is fixture item image 1.');
-      assert.deepStrictEqual(res.Link, 'This is fixture item url 1.');
+      assert.deepStrictEqual(res.Link, 'This is fixture item url 1');
     });
     it('returns NOT FOUND for an id not in the database', async () => {
       await testSession.get('/api/resources/0').expect(HttpStatus.NOT_FOUND);
@@ -79,7 +78,23 @@ describe('/api/resources', () => {
           })
           .expect(HttpStatus.CREATED);
 
-        const { id, CategoryId, CategoryTitle, Title, Organization, NavPosition, ShortDetails, LongDetails, Eligibility, Hours, Address, Contact,  MainImg, SuppImg, Link } = response.body;
+        const {
+          id,
+          CategoryId,
+          CategoryTitle,
+          Title,
+          Organization,
+          NavPosition,
+          ShortDetails,
+          LongDetails,
+          Eligibility,
+          Hours,
+          Address,
+          Contact,
+          MainImg,
+          SuppImg,
+          Link,
+        } = response.body;
         assert(id);
         assert.deepStrictEqual(CategoryId, 1);
         assert.deepStrictEqual(CategoryTitle, 'This is a new Resource CategoryTitle.');
@@ -138,7 +153,23 @@ describe('/api/resources', () => {
           })
           .expect(HttpStatus.OK);
 
-        const { id, CategoryId, CategoryTitle, Title, Organization, NavPosition, ShortDetails, LongDetails, Eligibility, Hours, Address, Contact,  MainImg, SuppImg, Link } = response.body;
+        const {
+          id,
+          CategoryId,
+          CategoryTitle,
+          Title,
+          Organization,
+          NavPosition,
+          ShortDetails,
+          LongDetails,
+          Eligibility,
+          Hours,
+          Address,
+          Contact,
+          MainImg,
+          SuppImg,
+          Link,
+        } = response.body;
         assert.deepStrictEqual(CategoryId, 1);
         assert.deepStrictEqual(CategoryTitle, 'This is an updated Resource CategoryTitle.');
         assert.deepStrictEqual(Title, 'This is an updated Resource Title.');

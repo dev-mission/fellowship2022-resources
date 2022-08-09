@@ -12,7 +12,6 @@ router.get('/', async (req, res) => {
   const records = await models.Category.findAll();
 
   res.json(records.map((r) => r.toJSON()));
-
 });
 
 router.get('/:id', async (req, res) => {
@@ -26,7 +25,7 @@ router.get('/:id', async (req, res) => {
 
 router.post('/', interceptors.requireAdmin, async (req, res) => {
   try {
-    const record = await models.Category.create(_.pick(req.body, ['id', 'Name', 'IconBackImg', 'NavBackImg', 'Position']));
+    const record = await models.Category.create(_.pick(req.body, ['Name', 'IconBackImg', 'NavBackImg', 'Position']));
     res.status(HttpStatus.CREATED).json(record.toJSON());
   } catch (error) {
     if (error.name === 'SequelizeValidationError') {
@@ -46,7 +45,7 @@ router.patch('/:id', interceptors.requireAdmin, async (req, res) => {
     await models.sequelize.transaction(async (transaction) => {
       record = await models.Category.findByPk(req.params.id, { transaction });
       if (record) {
-        await record.update(_.pick(req.body, ['id', 'Name', 'IconBackImg', 'NavBackImg', 'Position']), { transaction });
+        await record.update(_.pick(req.body, ['Name', 'IconBackImg', 'NavBackImg', 'Position']), { transaction });
       }
     });
     if (record) {
