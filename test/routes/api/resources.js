@@ -11,7 +11,7 @@ describe('/api/resources', () => {
   let testSession;
 
   beforeEach(async () => {
-    await helper.loadFixtures(['resources', 'users']);
+    await helper.loadFixtures(['categories', 'resources', 'users']);
     testSession = session(app);
   });
 

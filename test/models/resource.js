@@ -4,7 +4,7 @@ const models = require('../../models');
 
 describe('models.Resource', () => {
   beforeEach(async () => {
-    await helper.loadFixtures(['resources']);
+    await helper.loadFixtures(['categories', 'resources']);
   });
 
   it('creates a new Resource record', async () => {
