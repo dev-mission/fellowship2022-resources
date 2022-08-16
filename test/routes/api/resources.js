@@ -26,7 +26,7 @@ describe('/api/resources', () => {
       const response = await testSession.get('/api/resources?categoryId=2').expect(HttpStatus.OK);
       const res = response.body;
       assert.deepStrictEqual(res.length, 1);
-      assert.deepStrictEqual(res[0].Title, 'This is fixture item 2');
+      assert.deepStrictEqual(res[0].Title, 'This is fixture item 2.');
     });
   });
 
