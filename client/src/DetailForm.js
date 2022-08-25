@@ -73,7 +73,7 @@ function DetailForm() {
               <label className="form-label" htmlFor="Detail">
                 Details
               </label>
-              <input type="text" className="form-control" id="Detail" name="Details" onChange={onChange} value={data.Detail} />
+              <input type="text" className="form-control" id="Detail" name="Detail" onChange={onChange} value={data.Detail} />
             </div>
             <div className="mb-3">
               <label className="form-label" htmlFor="Link">
