@@ -4,7 +4,17 @@ const models = require('../../models');
 
 describe('models.Resource', () => {
   beforeEach(async () => {
+    await helper.loadUploads([
+      ['512x512.png', 'IconBackImg1'],
+      ['512x512.png', 'NavBackImg1'],
+      ['512x512.png', 'IconBackImg2'],
+      ['512x512.png', 'NavBackImg2'],
+    ]);
     await helper.loadFixtures(['categories', 'resources']);
+  });
+
+  afterEach(async () => {
+    await helper.cleanAssets();
   });
 
   it('creates a new Resource record', async () => {

@@ -16,7 +16,19 @@ module.exports = (sequelize, DataTypes) => {
     {
       Name: DataTypes.STRING,
       IconBackImg: DataTypes.STRING,
+      IconBackImgUrl: {
+        type: DataTypes.VIRTUAL,
+        get() {
+          return this.assetUrl('IconBackImg');
+        },
+      },
       NavBackImg: DataTypes.STRING,
+      NavBackImgUrl: {
+        type: DataTypes.VIRTUAL,
+        get() {
+          return this.assetUrl('NavBackImg');
+        },
+      },
       Position: DataTypes.INTEGER,
     },
     {
@@ -24,5 +36,11 @@ module.exports = (sequelize, DataTypes) => {
       modelName: 'Category',
     }
   );
+
+  Category.afterSave(async (category, options) => {
+    category.handleAssetFile('IconBackImg', options);
+    category.handleAssetFile('NavBackImg', options);
+  });
+
   return Category;
 };

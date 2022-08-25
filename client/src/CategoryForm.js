@@ -1,5 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+
+import PhotoInput from './Components/PhotoInput';
+
 import Api from './Api';
 
 function CategoryForm() {
@@ -55,20 +58,33 @@ function CategoryForm() {
               <label className="form-label" htmlFor="NavBackImg">
                 NavBackImg
               </label>
-              <input type="text" className="form-control" id="NavBackImg" name="NavBackImg" onChange={onChange} value={data.NavBackImg} />
+              <PhotoInput
+                className="card"
+                id="NavBackImg"
+                name="NavBackImg"
+                value={data.NavBackImg}
+                valueUrl={data.NavBackImgUrl}
+                onChange={onChange}>
+                <div className="card-body">
+                  <div className="card-text">Drag-and-drop a photo file here, or click here to browse and select a file.</div>
+                </div>
+              </PhotoInput>
             </div>
             <div className="mb-3">
               <label className="form-label" htmlFor="IconBackImg">
                 IconBackImg
               </label>
-              <input
-                type="text"
-                className="form-control"
+              <PhotoInput
+                className="card"
                 id="IconBackImg"
                 name="IconBackImg"
-                onChange={onChange}
                 value={data.IconBackImg}
-              />
+                valueUrl={data.IconBackImgUrl}
+                onChange={onChange}>
+                <div className="card-body">
+                  <div className="card-text">Drag-and-drop a photo file here, or click here to browse and select a file.</div>
+                </div>
+              </PhotoInput>
             </div>
             <div className="mb-3">
               <label className="form-label" htmlFor="Position">

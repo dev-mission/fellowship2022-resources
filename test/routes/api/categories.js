@@ -11,8 +11,18 @@ describe('/api/categories', () => {
   let testSession;
 
   beforeEach(async () => {
+    await helper.loadUploads([
+      ['512x512.png', 'IconBackImg1'],
+      ['512x512.png', 'NavBackImg1'],
+      ['512x512.png', 'IconBackImg2'],
+      ['512x512.png', 'NavBackImg2'],
+    ]);
     await helper.loadFixtures(['categories', 'users']);
     testSession = session(app);
+  });
+
+  afterEach(async () => {
+    await helper.cleanAssets();
   });
 
   describe('GET /', () => {
@@ -28,8 +38,8 @@ describe('/api/categories', () => {
       const cat = response.body;
       assert.deepStrictEqual(cat.id, 1);
       assert.deepStrictEqual(cat.Name, 'Fixture item 1');
-      assert.deepStrictEqual(cat.IconBackImg, 'This is fixture item 1.');
-      assert.deepStrictEqual(cat.NavBackImg, 'This is fixture item 1.');
+      assert.deepStrictEqual(cat.IconBackImg, 'IconBackImg1');
+      assert.deepStrictEqual(cat.NavBackImg, 'NavBackImg1');
       assert.deepStrictEqual(cat.Position, 1);
     });
     it('returns NOT FOUND for an id not in the database', async () => {
@@ -77,28 +87,33 @@ describe('/api/categories', () => {
 
     describe('PATCH /:id', () => {
       it('updates an existing Category', async () => {
+        await helper.loadUploads([
+          ['512x512.png', 'NewIconBackImg'],
+          ['512x512.png', 'NewNavBackImg'],
+        ]);
+
         const response = await testSession
           .patch('/api/categories/1')
           .set('Accept', 'application/json')
           .send({
             Name: 'This is an updated Category Name.',
-            IconBackImg: 'This is an updated Category IconBackImg.',
-            NavBackImg: 'This is an updated Category NavBackImg.',
+            IconBackImg: 'NewIconBackImg',
+            NavBackImg: 'NewNavBackImg',
             Position: 1,
           })
           .expect(HttpStatus.OK);
 
         const { id, Name, IconBackImg, NavBackImg, Position } = response.body;
         assert.deepStrictEqual(Name, 'This is an updated Category Name.');
-        assert.deepStrictEqual(IconBackImg, 'This is an updated Category IconBackImg.');
-        assert.deepStrictEqual(NavBackImg, 'This is an updated Category NavBackImg.');
+        assert.deepStrictEqual(IconBackImg, 'NewIconBackImg');
+        assert.deepStrictEqual(NavBackImg, 'NewNavBackImg');
         assert.deepStrictEqual(Position, 1);
 
         const cat = await models.Category.findByPk(id);
         assert(cat);
         assert.deepStrictEqual(cat.Name, 'This is an updated Category Name.');
-        assert.deepStrictEqual(cat.IconBackImg, 'This is an updated Category IconBackImg.');
-        assert.deepStrictEqual(cat.NavBackImg, 'This is an updated Category NavBackImg.');
+        assert.deepStrictEqual(cat.IconBackImg, 'NewIconBackImg');
+        assert.deepStrictEqual(cat.NavBackImg, 'NewNavBackImg');
         assert.deepStrictEqual(cat.Position, 1);
       });
     });
