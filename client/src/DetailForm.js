@@ -8,16 +8,15 @@ function DetailForm() {
   const [data, setData] = useState({
     Title: '',
     Organization: '',
-    LongDetails: '',
-    Eligibility: '',
+    Detail: '',
     Link: '',
     Hours: '',
     Address: '',
-    Contact:'',
-    MainImg:'',
+    Contact: '',
+    MainImg: '',
     SuppImg: '',
   });
-  
+
   useEffect(() => {
     if (id) {
       Api.resources.get(id).then((response) => setData(response.data));
@@ -61,19 +60,20 @@ function DetailForm() {
               <label className="form-label" htmlFor="Organization">
                 Organization
               </label>
-              <input type="text" className="form-control" id="Organization" name="Organization" onChange={onChange} value={data.Organization} />
+              <input
+                type="text"
+                className="form-control"
+                id="Organization"
+                name="Organization"
+                onChange={onChange}
+                value={data.Organization}
+              />
             </div>
             <div className="mb-3">
-              <label className="form-label" htmlFor="LongDetails">
-                Long Details
+              <label className="form-label" htmlFor="Detail">
+                Details
               </label>
-              <input type="text" className="form-control" id="LongDetails" name="LongDetails" onChange={onChange} value={data.LongDetails} />
-            </div>
-            <div className="mb-3">
-              <label className="form-label" htmlFor="Eligibility">
-                Eligibility
-              </label>
-              <input type="text" className="form-control" id="Eligibility" name="Eligibility" onChange={onChange} value={data.Eligibility} />
+              <input type="text" className="form-control" id="Detail" name="Details" onChange={onChange} value={data.Detail} />
             </div>
             <div className="mb-3">
               <label className="form-label" htmlFor="Link">
@@ -103,27 +103,13 @@ function DetailForm() {
               <label className="form-label" htmlFor="MainImg">
                 Main Img
               </label>
-              <input
-                type="text"
-                className="form-control"
-                id="MainImg"
-                name="MainImg"
-                onChange={onChange}
-                value={data.MainvImg}
-              />
+              <input type="text" className="form-control" id="MainImg" name="MainImg" onChange={onChange} value={data.MainvImg} />
             </div>
             <div className="mb-3">
               <label className="form-label" htmlFor="SuppImg">
                 Supporting Img
               </label>
-              <input
-                type="text"
-                className="form-control"
-                id="SuppImg"
-                name="SuppImg"
-                onChange={onChange}
-                value={data.SuppImg}
-              />
+              <input type="text" className="form-control" id="SuppImg" name="SuppImg" onChange={onChange} value={data.SuppImg} />
             </div>
             <button type="submit" className="btn btn-primary">
               Submit

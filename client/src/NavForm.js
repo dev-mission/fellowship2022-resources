@@ -10,10 +10,10 @@ function ResourceForm() {
     CategoryTitle: '',
     Title: '',
     Organization: '',
-    ShortDetails: '',
+    Detail: '',
     NavImg: '',
   });
-  
+
   useEffect(() => {
     if (id) {
       Api.resources.get(id).then((response) => setData(response.data));
@@ -57,7 +57,14 @@ function ResourceForm() {
               <label className="form-label" htmlFor="CategoryTitle">
                 Category Title
               </label>
-              <input type="text" className="form-control" id="CategoryTitle" name="CategoryTitle" onChange={onChange} value={data.CategoryTitle} />
+              <input
+                type="text"
+                className="form-control"
+                id="CategoryTitle"
+                name="CategoryTitle"
+                onChange={onChange}
+                value={data.CategoryTitle}
+              />
             </div>
             <div className="mb-3">
               <label className="form-label" htmlFor="Title">
@@ -69,26 +76,26 @@ function ResourceForm() {
               <label className="form-label" htmlFor="Organization">
                 Organization
               </label>
-              <input type="text" className="form-control" id="Organization" name="Organization" onChange={onChange} value={data.Organization} />
+              <input
+                type="text"
+                className="form-control"
+                id="Organization"
+                name="Organization"
+                onChange={onChange}
+                value={data.Organization}
+              />
             </div>
             <div className="mb-3">
-              <label className="form-label" htmlFor="ShortDetails">
-                Short Details
+              <label className="form-label" htmlFor="Detail">
+                Detail
               </label>
-              <input type="text" className="form-control" id="ShortDetails" name="ShortDetails" onChange={onChange} value={data.ShortDetails} />
+              <input type="text" className="form-control" id="Detail" name="Detail" onChange={onChange} value={data.Detail} />
             </div>
             <div className="mb-3">
               <label className="form-label" htmlFor="NavImg">
                 Nav Img
               </label>
-              <input
-                type="text"
-                className="form-control"
-                id="NavImg"
-                name="NavImg"
-                onChange={onChange}
-                value={data.NavImg}
-              />
+              <input type="text" className="form-control" id="NavImg" name="NavImg" onChange={onChange} value={data.NavImg} />
             </div>
             <button type="submit" className="btn btn-primary">
               Submit
