@@ -97,6 +97,12 @@ function NavForm() {
               </label>
               <input type="text" className="form-control" id="NavImg" name="NavImg" onChange={onChange} value={data.NavImg} />
             </div>
+            <div className="mb-3">
+              <label className="form-label" htmlFor="NavImg">
+                Nav Img
+              </label>
+              <input type="text" className="form-control" id="NavImg" name="NavImg" onChange={onChange} value={data.NavImg} />
+            </div>
             <button type="submit" className="btn btn-primary">
               Submit
             </button>

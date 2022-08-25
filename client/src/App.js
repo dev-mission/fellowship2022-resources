@@ -19,21 +19,21 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route
-             path="/detail/new"
-             element={
-               <AuthProtected isAdminRequired={true}>
-                 <CategoryForm />
-               </AuthProtected>
-             }
-           />
-           <Route
-             path="/detail/:id/edit"
-             element={
-               <AuthProtected isAdminRequired={true}>
-                 <CategoryForm />
-               </AuthProtected>
-             }
-           />
+            path="/detail/new"
+            element={
+              <AuthProtected isAdminRequired={true}>
+                <CategoryForm />
+              </AuthProtected>
+            }
+          />
+          <Route
+            path="/detail/:id/edit"
+            element={
+              <AuthProtected isAdminRequired={true}>
+                <CategoryForm />
+              </AuthProtected>
+            }
+          />
           <Route path="/login" element={<Login />} />
           <Route path="/passwords/*" element={<PasswordRoutes />} />
           {process.env.REACT_APP_FEATURE_REGISTRATION === 'true' && <Route path="/register" element={<Register />} />}
