@@ -11,8 +11,18 @@ describe('/api/resources', () => {
   let testSession;
 
   beforeEach(async () => {
+    await helper.loadUploads([
+      ['512x512.png', 'IconBackImg1'],
+      ['512x512.png', 'NavBackImg1'],
+      ['512x512.png', 'IconBackImg2'],
+      ['512x512.png', 'NavBackImg2'],
+    ]);
     await helper.loadFixtures(['categories', 'resources', 'users']);
     testSession = session(app);
+  });
+
+  afterEach(async () => {
+    await helper.cleanAssets();
   });
 
   describe('GET /', () => {
