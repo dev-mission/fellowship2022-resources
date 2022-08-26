@@ -32,9 +32,11 @@ function Header() {
   return (
     <nav className="header navbar navbar-expand-md navbar-light bg-light fixed-top">
       <div className="container">
-        <Link className="navbar-brand" to="/">
-          Full Stack Starter
-        </Link>
+        <li className="nav-item active">
+          <Link className="navbar-brand" to="/">
+            <img src="./Images/PuentesIcon.png" alt="Puentes SF" width="30" height="24" />
+          </Link>
+        </li>
         <button
           className="navbar-toggler"
           type="button"
@@ -48,11 +50,24 @@ function Header() {
         <div className="collapse navbar-collapse" id="navbarsExampleDefault">
           <ul className="navbar-nav flex-grow-1 mb-2 mb-md-0">
             <li className="nav-item active">
-              <Link className="nav-link" aria-current="page" to="/">
-                Home
-              </Link>
+              <Link className="nav-link" aria-current="page" to="/"></Link>
             </li>
             <div className="flex-grow-1 d-flex justify-content-end">
+              <li className="nav-item">
+                <Link className="nav-link" to="/mission">
+                  Nuestra Misiòn
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/mission">
+                  Recursos
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/mission">
+                  Contacto
+                </Link>
+              </li>
               {user && (
                 <>
                   <li className="nav-item me-3">
