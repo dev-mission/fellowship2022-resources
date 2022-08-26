@@ -7,9 +7,9 @@ function CategoryCard(Name, IconBackImg, NavBackImg, Position) {
     <div class="col-6">
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title">{name}</h5>
-          <p class="card-text">${address}</p>
-          <a href="housing.html?id=${data.records[i].id}" class="btn btn-primary">
+          <h5 class="card-title">{Name}</h5>
+          <p class="card-text">{IconBackImg}</p>
+          <a href="" class="btn btn-primary">
             More Information
           </a>
         </div>
