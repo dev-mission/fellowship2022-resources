@@ -5,6 +5,8 @@ import './App.scss';
 import { AuthContextProvider, AuthProtected } from './AuthContext';
 import Header from './Header';
 import Home from './Home';
+import NavigationPage from './NavigationPage';
+import DetailPage from './DetailPage';
 import CategoryForm from './CategoryForm.js';
 import Login from './Login';
 import PasswordRoutes from './Passwords/PasswordRoutes';
@@ -19,6 +21,8 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/navigation" element={<NavigationPage />} />
+          <Route path="/detail" element={<DetailPage />} />
           <Route
             path="/categories/new"
             element={

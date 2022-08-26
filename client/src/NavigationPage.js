@@ -1,9 +1,8 @@
 import { Link } from 'react-router-dom';
 import { useAuthContext } from './AuthContext';
 import { useEffect, useState } from 'react';
-import CategoryCard from './CategoryCard';
 
-function Home() {
+function NavigationPage() {
   const [categories, setCategories] = useState([]);
   const [resources, setResources] = useState([]);
 
@@ -11,7 +10,9 @@ function Home() {
     fetch('/api/categories')
       .then((response) => response.json())
       .then((data) => setCategories(data));
-
+    fetch('/api/resources')
+      .then((response) => response.json())
+      .then((data) => setResources(data));
   }, []);
 
   const { user } = useAuthContext();
@@ -25,7 +26,9 @@ function Home() {
             New Category
           </Link>
 
-
+          <Link to="/resources/new" className="btn btn-primary">
+            New resource
+          </Link>
         </p>
       )}
       <div className="row">
@@ -39,13 +42,14 @@ function Home() {
         ))}
       </div>
       <div className="row">
-        {categories.map((cat) => (
-          <CategoryCard Name={cat.Name} IconBackImg={cat.IconBackImg} NavBackImg={cat.NavBackImg} Position={cat.Position}/>
+        {resources.map((res) => (
+          <p key={`res-${res.id}`}>
+            {res.Title} ({res.Category?.Name})<Link to={`/resources/${res.id}/edit`}>Edit</Link>
+          </p>
         ))}
       </div>
-      
     </main>
   );
 }
 
-export default Home;
+export default NavigationPage;
