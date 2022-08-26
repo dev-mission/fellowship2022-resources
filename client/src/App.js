@@ -21,7 +21,6 @@ function App() {
     <AuthContextProvider>
       <Router>
         <Header />
-        <Footer />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/mission" element={<MissionPage />} />
@@ -71,6 +70,7 @@ function App() {
             }
           />
         </Routes>
+        <Footer />
       </Router>
     </AuthContextProvider>
   );

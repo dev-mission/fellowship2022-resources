@@ -34,7 +34,7 @@ function Home() {
         <div className="row">
           {categories.map((cat) => (
             <div>
-              <CategoryCard Name={cat.Name} Img={cat.IconBackImg} />
+              <CategoryCard Name={cat.Name} Img={cat.IconBackImgUrl} />
               <Link to={`/categories/${cat.id}/edit`}>Edit</Link>
             </div>
           ))}

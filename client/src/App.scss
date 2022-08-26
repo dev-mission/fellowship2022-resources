@@ -7,8 +7,13 @@ body {
 .card-icon {
   height: 300px;
   width: 400px;
+  overflow: hidden;
 }
 .card-img {
   height: auto;
   width: 400px;
+}
+
+.footer-container {
+  background-color: greenyellow;
 }
