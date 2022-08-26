@@ -48,9 +48,20 @@ function Header() {
         <div className="collapse navbar-collapse" id="navbarsExampleDefault">
           <ul className="navbar-nav flex-grow-1 mb-2 mb-md-0">
             <li className="nav-item active">
+              <Link className="navbar-brand" to="/">
+                <img
+                src="https://cdn.glitch.com/74b34318-c2b9-4fab-9a23-ca09b542213d%2FPiano-Icon-R.png?v=1627534306822"
+                alt="Brand Icon"
+                width="30"
+                height="24"/>
+                Piano Chordz
+              </Link>
               <Link className="nav-link" aria-current="page" to="/">
                 Home
               </Link>
+            </li>
+            <li className="nav-item active">
+              <Link className="nav-link" aria-current="page" to="/"></Link>
             </li>
             <div className="flex-grow-1 d-flex justify-content-end">
               {user && (

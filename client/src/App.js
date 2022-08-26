@@ -4,7 +4,9 @@ import './App.scss';
 
 import { AuthContextProvider, AuthProtected } from './AuthContext';
 import Header from './Header';
+import Footer from './Footer';
 import Home from './Home';
+import MissionPage from './MissionPage';
 import NavigationPage from './NavigationPage';
 import DetailPage from './DetailPage';
 import CategoryForm from './CategoryForm.js';
@@ -19,8 +21,10 @@ function App() {
     <AuthContextProvider>
       <Router>
         <Header />
+        <Footer />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/mission" element={<MissionPage />} />
           <Route path="/navigation" element={<NavigationPage />} />
           <Route path="/detail" element={<DetailPage />} />
           <Route

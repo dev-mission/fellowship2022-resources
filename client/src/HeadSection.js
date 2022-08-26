@@ -1,13 +1,16 @@
+import { urlencoded } from 'express';
+
 function HeadSection({ Title, Description, Img }) {
+  var divImg = {
+    backgroundImage: 'url();',
+  };
   return (
-    <div class="container" id="Img">
-      <div class="row-3">
+    <div className="container" id="Img" Style={{}}>
+      <div className="row">
         <h1>{Title}</h1>
       </div>
-      <div class="row-3">
-        <h3>{Description}</h3>
-      </div>
-      <div class="row-3"></div>
+      <div className="row"></div>
+      <div className="row"></div>
     </div>
   );
 }

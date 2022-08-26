@@ -2,14 +2,17 @@ import { Link } from 'react-router-dom';
 import { useAuthContext } from './AuthContext';
 import { useEffect, useState } from 'react';
 
-function CategoryCard({ Name, IconBackImg, NavBackImg, Position }) {
+function CategoryCard({ Name, Img }) {
   return (
-    <div class="col-6">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">{Name}</h5>
-          <p class="card-text">{IconBackImg}</p>
-          <a href="" class="btn btn-primary">
+    <div className="col-6">
+      <div className="card">
+        <div className="card-body">
+          <div className="card-icon row">
+            <img src={Img}></img>
+          </div>
+          ooooo
+          <h5 className="card-title row">{Name}</h5>
+          <a href="" className="btn btn-primary">
             More Information
           </a>
         </div>

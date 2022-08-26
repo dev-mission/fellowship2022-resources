@@ -6,7 +6,6 @@ import HeadSection from './HeadSection';
 
 function Home() {
   const [categories, setCategories] = useState([]);
-  const [resources, setResources] = useState([]);
 
   useEffect(function () {
     fetch('/api/categories')
@@ -28,22 +27,16 @@ function Home() {
       )}
       <HeadSection Title={'Our Home Page Title'} Description="Our Unique Description" Img="UniqueURL" />
 
-      <div class="Body container">
+      <div className="Body container">
         <div className="Steps"></div>
         <h1>Recursos en 3 pasos!</h1>
+
         <div className="row">
           {categories.map((cat) => (
-            <p key={`cat-${cat.id}`}>
-              {cat.Name}
-              {cat.IconBackImgUrl && <img src={cat.IconBackImgUrl} />}
-              {cat.NavBackImgUrl && <img src={cat.NavBackImgUrl} />}
+            <div>
+              <CategoryCard Name={cat.Name} Img={cat.IconBackImg} />
               <Link to={`/categories/${cat.id}/edit`}>Edit</Link>
-            </p>
-          ))}
-        </div>
-        <div className="row">
-          {categories.map((cat) => (
-            <CategoryCard Name={cat.Name} IconBackImg={cat.IconBackImg} NavBackImg={cat.NavBackImg} Position={cat.Position} />
+            </div>
           ))}
         </div>
       </div>
