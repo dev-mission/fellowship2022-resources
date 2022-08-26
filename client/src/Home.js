@@ -15,21 +15,20 @@ function Home() {
   return (
     <main className="container">
       <h1>Home</h1>
-  
+
       {user?.isAdmin && (
-         <p>
-           <Link to="/detail/new" className="btn btn-primary">
-             New Category
-           </Link>
-         </p>
-       )}
-   {items.map((item) => (
-           <p>
-             {
-               item.Name
-             }
-           </p>
-         ))}
+        <p>
+          <Link to="/detail/new" className="btn btn-primary">
+            New Category
+          </Link>
+        </p>
+      )}
+      {items.map((item) => (
+        <p>
+          {item.Name}
+          <img src={item.IconBackImgUrl} />
+        </p>
+      ))}
     </main>
   );
 }
