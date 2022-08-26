@@ -10,6 +10,7 @@ import Login from './Login';
 import PasswordRoutes from './Passwords/PasswordRoutes';
 import Register from './Register';
 import UserRoutes from './Users/UserRoutes';
+import ResourceForm from './ResourceForm';
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route
-            path="/detail/new"
+            path="/categories/new"
             element={
               <AuthProtected isAdminRequired={true}>
                 <CategoryForm />
@@ -27,10 +28,26 @@ function App() {
             }
           />
           <Route
-            path="/detail/:id/edit"
+            path="/categories/:id/edit"
             element={
               <AuthProtected isAdminRequired={true}>
                 <CategoryForm />
+              </AuthProtected>
+            }
+          />
+          <Route
+            path="/resources/new"
+            element={
+              <AuthProtected isAdminRequired={true}>
+                <ResourceForm />
+              </AuthProtected>
+            }
+          />
+          <Route
+            path="/resources/:id/edit"
+            element={
+              <AuthProtected isAdminRequired={true}>
+                <ResourceForm />
               </AuthProtected>
             }
           />
