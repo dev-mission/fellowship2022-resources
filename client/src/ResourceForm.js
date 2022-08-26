@@ -5,9 +5,9 @@ import Api from './Api';
 function ResourceForm() {
   const navigate = useNavigate();
   const { id } = useParams();
+  const [categories, setCategories] = useState([]);
   const [data, setData] = useState({
-    CategoryId: '',
-    CategoryTitle: '',
+    CategoryId: null,
     Title: '',
     Organization: '',
     Detail: '',
@@ -21,9 +21,17 @@ function ResourceForm() {
   });
 
   useEffect(() => {
-    if (id) {
-      Api.resources.get(id).then((response) => setData(response.data));
-    }
+    Api.categories.index().then((response) => {
+      const newCategories = response.data;
+      setCategories(newCategories);
+      if (id) {
+        Api.resources.get(id).then((response) => setData(response.data));
+      } else if (newCategories.length) {
+        const newData = { ...data };
+        newData.CategoryId = newCategories[0].id;
+        setData(newData);
+      }
+    });
   }, [id]);
 
   async function onSubmit(event) {
@@ -55,22 +63,13 @@ function ResourceForm() {
           <form onSubmit={onSubmit}>
             <div className="mb-3">
               <label className="form-label" htmlFor="CategoryId">
-                Category Id
+                Category
               </label>
-              <input type="text" className="form-control" id="CategoryId" name="CategoryId" onChange={onChange} value={data.CategoryId} />
-            </div>
-            <div className="mb-3">
-              <label className="form-label" htmlFor="CategoryTitle">
-                Category Title
-              </label>
-              <input
-                type="text"
-                className="form-control"
-                id="CategoryTitle"
-                name="CategoryTitle"
-                onChange={onChange}
-                value={data.CategoryTitle}
-              />
+              <select id="CategoryId" name="CategoryId" className="form-select" onChange={onChange}>
+                {categories.map((cat) => (
+                  <option value={cat.id}>{cat.Name}</option>
+                ))}
+              </select>
             </div>
             <div className="mb-3">
               <label className="form-label" htmlFor="Title">
