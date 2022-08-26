@@ -41,9 +41,7 @@ describe('/api/resources', () => {
       assert.deepStrictEqual(res.Title, 'This is fixture item 1.');
       assert.deepStrictEqual(res.Organization, 'This is fixture item 1.');
       assert.deepStrictEqual(res.NavPosition, 1);
-      assert.deepStrictEqual(res.ShortDetails, 'This is fixture item 1.');
-      assert.deepStrictEqual(res.LongDetails, 'This is fixture item 1.');
-      assert.deepStrictEqual(res.Eligibility, 'This is fixture item 1.');
+      assert.deepStrictEqual(res.Detail, 'This is fixture item 1.');
       assert.deepStrictEqual(res.Hours, 'This is fixture item 1.');
       assert.deepStrictEqual(res.Address, 'This is fixture item 1.');
       assert.deepStrictEqual(res.Contact, 'This is fixture item 1.');
@@ -76,9 +74,7 @@ describe('/api/resources', () => {
             Title: 'This is a new Resource Title.',
             Organization: 'This is a new Resource Organization.',
             NavPosition: 1,
-            ShortDetails: 'This is a new Resource ShortDetails.',
-            LongDetails: 'This is a new Resource LongDetails.',
-            Eligibility: 'This is a new Resource Eligibility.',
+            Detail: 'This is a new Resource Detail.',
             Hours: 'This is a new Resource Hours.',
             Address: 'This is a new Resource Address.',
             Contact: 'This is a new Resource Contact.',
@@ -88,32 +84,15 @@ describe('/api/resources', () => {
           })
           .expect(HttpStatus.CREATED);
 
-        const {
-          id,
-          CategoryId,
-          CategoryTitle,
-          Title,
-          Organization,
-          NavPosition,
-          ShortDetails,
-          LongDetails,
-          Eligibility,
-          Hours,
-          Address,
-          Contact,
-          MainImg,
-          SuppImg,
-          Link,
-        } = response.body;
+        const { id, CategoryId, CategoryTitle, Title, Organization, NavPosition, Detail, Hours, Address, Contact, MainImg, SuppImg, Link } =
+          response.body;
         assert(id);
         assert.deepStrictEqual(CategoryId, 1);
         assert.deepStrictEqual(CategoryTitle, 'This is a new Resource CategoryTitle.');
         assert.deepStrictEqual(Title, 'This is a new Resource Title.');
         assert.deepStrictEqual(Organization, 'This is a new Resource Organization.');
         assert.deepStrictEqual(NavPosition, 1);
-        assert.deepStrictEqual(ShortDetails, 'This is a new Resource ShortDetails.');
-        assert.deepStrictEqual(LongDetails, 'This is a new Resource LongDetails.');
-        assert.deepStrictEqual(Eligibility, 'This is a new Resource Eligibility.');
+        assert.deepStrictEqual(Detail, 'This is a new Resource Detail.');
         assert.deepStrictEqual(Hours, 'This is a new Resource Hours.');
         assert.deepStrictEqual(Address, 'This is a new Resource Address.');
         assert.deepStrictEqual(Contact, 'This is a new Resource Contact.');
@@ -128,9 +107,7 @@ describe('/api/resources', () => {
         assert.deepStrictEqual(res.Title, 'This is a new Resource Title.');
         assert.deepStrictEqual(res.Organization, 'This is a new Resource Organization.');
         assert.deepStrictEqual(res.NavPosition, 1);
-        assert.deepStrictEqual(res.ShortDetails, 'This is a new Resource ShortDetails.');
-        assert.deepStrictEqual(res.LongDetails, 'This is a new Resource LongDetails.');
-        assert.deepStrictEqual(res.Eligibility, 'This is a new Resource Eligibility.');
+        assert.deepStrictEqual(res.Detail, 'This is a new Resource Detail.');
         assert.deepStrictEqual(res.Hours, 'This is a new Resource Hours.');
         assert.deepStrictEqual(res.Address, 'This is a new Resource Address.');
         assert.deepStrictEqual(res.Contact, 'This is a new Resource Contact.');
@@ -151,9 +128,7 @@ describe('/api/resources', () => {
             Title: 'This is an updated Resource Title.',
             Organization: 'This is an updated Resource Organization.',
             NavPosition: 1,
-            ShortDetails: 'This is an updated Resource ShortDetails.',
-            LongDetails: 'This is an updated Resource LongDetails.',
-            Eligibility: 'This is an updated Resource Eligibility.',
+            Detail: 'This is an updated Resource Detail.',
             Hours: 'This is an updated Resource Hours.',
             Address: 'This is an updated Resource Address.',
             Contact: 'This is an updated Resource Contact.',
@@ -170,9 +145,7 @@ describe('/api/resources', () => {
           Title,
           Organization,
           NavPosition,
-          ShortDetails,
-          LongDetails,
-          Eligibility,
+          ShortDetail,
           Hours,
           Address,
           Contact,
@@ -185,9 +158,7 @@ describe('/api/resources', () => {
         assert.deepStrictEqual(Title, 'This is an updated Resource Title.');
         assert.deepStrictEqual(Organization, 'This is an updated Resource Organization.');
         assert.deepStrictEqual(NavPosition, 1);
-        assert.deepStrictEqual(ShortDetails, 'This is an updated Resource ShortDetails.');
-        assert.deepStrictEqual(LongDetails, 'This is an updated Resource LongDetails.');
-        assert.deepStrictEqual(Eligibility, 'This is an updated Resource Eligibility.');
+        assert.deepStrictEqual(Detail, 'This is an updated Resource Detail.');
         assert.deepStrictEqual(Hours, 'This is an updated Resource Hours.');
         assert.deepStrictEqual(Address, 'This is an updated Resource Address.');
         assert.deepStrictEqual(Contact, 'This is an updated Resource Contact.');
@@ -202,9 +173,7 @@ describe('/api/resources', () => {
         assert.deepStrictEqual(res.Title, 'This is an updated Resource Title.');
         assert.deepStrictEqual(res.Organization, 'This is an updated Resource Organization.');
         assert.deepStrictEqual(res.NavPosition, 1);
-        assert.deepStrictEqual(res.ShortDetails, 'This is an updated Resource ShortDetails.');
-        assert.deepStrictEqual(res.LongDetails, 'This is an updated Resource LongDetails.');
-        assert.deepStrictEqual(res.Eligibility, 'This is an updated Resource Eligibility.');
+        assert.deepStrictEqual(res.Detail, 'This is an updated Resource Detail.');
         assert.deepStrictEqual(res.Hours, 'This is an updated Resource Hours.');
         assert.deepStrictEqual(res.Address, 'This is an updated Resource Address.');
         assert.deepStrictEqual(res.Contact, 'This is an updated Resource Contact.');

@@ -24,9 +24,7 @@ describe('models.Resource', () => {
       Title: 'This is fixture item 1.',
       Organization: 'This is fixture item 1.',
       NavPosition: 1,
-      ShortDetails: 'This is fixture item 1.',
-      LongDetails: 'This is fixture item 1.',
-      Eligibility: 'This is fixture item 1.',
+      Detail: 'This is fixture item 1.',
       Hours: 'This is fixture item 1.',
       Address: 'This is fixture item 1.',
       Contact: 'This is fixture item 1.',
@@ -43,9 +41,7 @@ describe('models.Resource', () => {
     assert.deepStrictEqual(res.Title, 'This is fixture item 1.');
     assert.deepStrictEqual(res.Organization, 'This is fixture item 1.');
     assert.deepStrictEqual(res.NavPosition, 1);
-    assert.deepStrictEqual(res.ShortDetails, 'This is fixture item 1.');
-    assert.deepStrictEqual(res.LongDetails, 'This is fixture item 1.');
-    assert.deepStrictEqual(res.Eligibility, 'This is fixture item 1.');
+    assert.deepStrictEqual(res.Detail, 'This is fixture item 1.');
     assert.deepStrictEqual(res.Hours, 'This is fixture item 1.');
     assert.deepStrictEqual(res.Address, 'This is fixture item 1.');
     assert.deepStrictEqual(res.Contact, 'This is fixture item 1.');
