@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { useAuthContext } from './AuthContext';
 import { useEffect, useState } from 'react';
 
-function CategoryCard(Name, IconBackImg, NavBackImg, Position) {
+function CategoryCard({ Name, IconBackImg, NavBackImg, Position }) {
   return (
     <div class="col-6">
       <div class="card">

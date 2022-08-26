@@ -1,4 +1,4 @@
-function HeadSection(Title, Description, Img) {
+function HeadSection({ Title, Description, Img }) {
   return (
     <div class="container" id="Img">
       <div class="row-3">
