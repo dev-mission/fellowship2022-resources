@@ -2,13 +2,16 @@ import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import Api from './Api';
 
-function DetailForm() {
+function ResourceForm() {
   const navigate = useNavigate();
   const { id } = useParams();
   const [data, setData] = useState({
+    CategoryId: '',
+    CategoryTitle: '',
     Title: '',
     Organization: '',
     Detail: '',
+    NavImg: '',
     Link: '',
     Hours: '',
     Address: '',
@@ -51,6 +54,25 @@ function DetailForm() {
           <h1>Details Page</h1>
           <form onSubmit={onSubmit}>
             <div className="mb-3">
+              <label className="form-label" htmlFor="CategoryId">
+                Category Id
+              </label>
+              <input type="text" className="form-control" id="CategoryId" name="CategoryId" onChange={onChange} value={data.CategoryId} />
+            </div>
+            <div className="mb-3">
+              <label className="form-label" htmlFor="CategoryTitle">
+                Category Title
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                id="CategoryTitle"
+                name="CategoryTitle"
+                onChange={onChange}
+                value={data.CategoryTitle}
+              />
+            </div>
+            <div className="mb-3">
               <label className="form-label" htmlFor="Title">
                 Title
               </label>
@@ -71,9 +93,21 @@ function DetailForm() {
             </div>
             <div className="mb-3">
               <label className="form-label" htmlFor="Detail">
-                Details
+                Detail
               </label>
               <input type="text" className="form-control" id="Detail" name="Detail" onChange={onChange} value={data.Detail} />
+            </div>
+            <div className="mb-3">
+              <label className="form-label" htmlFor="NavImg">
+                Nav Img
+              </label>
+              <input type="text" className="form-control" id="NavImg" name="NavImg" onChange={onChange} value={data.NavImg} />
+            </div>
+            <div className="mb-3">
+              <label className="form-label" htmlFor="Title">
+                Title
+              </label>
+              <input type="text" className="form-control" id="Title" name="Title" onChange={onChange} value={data.Title} />
             </div>
             <div className="mb-3">
               <label className="form-label" htmlFor="Link">
@@ -120,4 +154,4 @@ function DetailForm() {
     </main>
   );
 }
-export default DetailForm;
+export default ResourceForm;

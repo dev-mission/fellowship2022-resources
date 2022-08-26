@@ -17,7 +17,7 @@ module.exports = {
           key: 'id',
         },
       },
-      CategoryTitle: {
+      CategoryName: {
         type: Sequelize.STRING,
       },
       Title: {
