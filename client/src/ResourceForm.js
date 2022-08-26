@@ -51,7 +51,7 @@ function ResourceForm() {
     <main className="container">
       <div className="row justify-content-center">
         <div className="col col-sm-10 col-md-8 col-lg-6 col-xl-4">
-          <h1>Details Page</h1>
+          <h1>Resource Page</h1>
           <form onSubmit={onSubmit}>
             <div className="mb-3">
               <label className="form-label" htmlFor="CategoryId">

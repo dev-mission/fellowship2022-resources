@@ -53,6 +53,23 @@ const Api = {
       return instance.delete(`/api/categories/${id}`);
     },
   },
+  resources: {
+    index() {
+      return instance.get('/api/resources');
+    },
+    get(id) {
+      return instance.get(`/api/resources/${id}`);
+    },
+    create(data) {
+      return instance.post('/api/resources', data);
+    },
+    update(id, data) {
+      return instance.patch(`/api/resources/${id}`, data);
+    },
+    delete(id) {
+      return instance.delete(`/api/resources/${id}`);
+    },
+  },
   passwords: {
     reset(email) {
       return instance.post('/api/passwords', { email });

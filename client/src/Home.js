@@ -18,11 +18,16 @@ function Home() {
 
       {user?.isAdmin && (
         <p>
-          <Link to="/detail/new" className="btn btn-primary">
+          <Link to="/categories/new" className="btn btn-primary">
             New Category
+          </Link>
+
+          <Link to="/resources/new" className="btn btn-primary">
+            New resource
           </Link>
         </p>
       )}
+
       {items.map((item) => (
         <p>
           {item.Name}
