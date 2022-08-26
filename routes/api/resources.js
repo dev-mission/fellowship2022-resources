@@ -9,8 +9,13 @@ const helpers = require('../helpers');
 const router = express.Router();
 
 router.get('/', async (req, res) => {
-  const records = await models.Resource.findAll();
-
+  const options = {};
+  if (req.query.categoryId) {
+    options.where = {
+      
+    };
+  }
+  const records = await models.Resource.findAll(options);
   res.json(records.map((r) => r.toJSON()));
 });
 

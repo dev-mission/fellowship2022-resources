@@ -31,7 +31,15 @@ describe('/api/resources', () => {
       const res = response.body;
       assert.deepStrictEqual(res.length, 2);
     });
+
+    it('returns a list of Resources that belong to a given Category', async () => {
+      const response = await testSession.get('/api/resources?categoryId=2').expect(HttpStatus.OK);
+      const res = response.body;
+      assert.deepStrictEqual(res.length, 1);
+      assert.deepStrictEqual(res[0].Title, 'This is fixture item 2.');
+    });
   });
+
   describe('GET /:id', () => {
     it('returns one Resource by id', async () => {
       const response = await testSession.get('/api/resources/1').expect(HttpStatus.OK);
