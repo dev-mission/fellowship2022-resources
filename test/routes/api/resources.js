@@ -138,21 +138,8 @@ describe('/api/resources', () => {
           })
           .expect(HttpStatus.OK);
 
-        const {
-          id,
-          CategoryId,
-          CategoryTitle,
-          Title,
-          Organization,
-          NavPosition,
-          ShortDetail,
-          Hours,
-          Address,
-          Contact,
-          MainImg,
-          SuppImg,
-          Link,
-        } = response.body;
+        const { id, CategoryId, CategoryTitle, Title, Organization, NavPosition, Detail, Hours, Address, Contact, MainImg, SuppImg, Link } =
+          response.body;
         assert.deepStrictEqual(CategoryId, 1);
         assert.deepStrictEqual(CategoryTitle, 'This is an updated Resource CategoryTitle.');
         assert.deepStrictEqual(Title, 'This is an updated Resource Title.');
