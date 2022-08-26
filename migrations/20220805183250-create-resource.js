@@ -17,7 +17,7 @@ module.exports = {
           key: 'id',
         },
       },
-      CategoryTitle: {
+      CategoryName: {
         type: Sequelize.STRING,
       },
       Title: {
@@ -29,13 +29,7 @@ module.exports = {
       NavPosition: {
         type: Sequelize.INTEGER,
       },
-      ShortDetails: {
-        type: Sequelize.TEXT,
-      },
-      LongDetails: {
-        type: Sequelize.TEXT,
-      },
-      Eligibility: {
+      Detail: {
         type: Sequelize.TEXT,
       },
       Hours: {
